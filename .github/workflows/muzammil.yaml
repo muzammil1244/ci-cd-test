@@ -1,4 +1,4 @@
-name: react ci cd
+name: Node.js CI/CD
 
 on:
   push:
@@ -11,5 +11,6 @@ jobs:
 
     steps:
       - name: Checkout code
-        runs: echo "hello world"
+        runs: echo "hello muzammil"
+
       
