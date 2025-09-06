@@ -11,6 +11,6 @@ jobs:
 
     steps:
       - name: Checkout code
-        runs: echo "hello muzammil"
+        run: echo "hello muzammil"
 
       
