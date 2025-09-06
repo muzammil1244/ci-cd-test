@@ -1,0 +1,15 @@
+name: react ci cd
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        runs: echo "hello world"
+      
