@@ -12,5 +12,20 @@ jobs:
     steps:
       - name: Checkout code
         run: echo "hello muzammil"
+      - name: Checkout use
+      - use:  actions/checkout@v5
+ 
+      - name: nodejs install
+      - uses: actions/setup-node@v5
+        with:
+        node-version : 20
+        
+      - name: nod js version 
+      - run : node -v
+       
+      - name: install depandicess
+      - run : npm ci
+      - name: test code
+      - run: npm run dev
 
       
