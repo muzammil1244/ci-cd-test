@@ -26,3 +26,26 @@ jobs:
 
       - name: Run dev server
         run: npm run build
+
+        deploy:
+        need: build
+        runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+
+      - name: Show Node.js version
+        run: node -v
+
+      - name: Install dependencies
+        run: npm ci
+      - name: Deploy data
+        run : echo "data have been deployed"
+
+
