@@ -23,7 +23,7 @@ jobs :
 
 
    - name: Build frontend
-     run: npm run build
+     run: npm run dev
 
       # 5. Run tests
    - name: Run tests
