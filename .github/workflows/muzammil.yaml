@@ -2,40 +2,39 @@ name : ci cd practice
  
 on :
  push :
- branch : ["main"]
-
-  jobs:
+  branches : ["main"]
+ jobs:
   
-   build_test :
+    build_test :
    
-    runs-on : ubuntu-latest
+     runs-on : ubuntu-latest
     
-    steps:
+     steps:
 
-     - name :  check out code
-       uses : actions/checkout@v3
+      - name :  check out code
+        uses : actions/checkout@v3
 
-     - name : node js setup
-       uses : actions/node@v3
-       with :
-        node-version : 20
+      - name : node js setup
+        uses : actions/node@v3
+        with :
+         node-version : 20
 
-     - name : install dependancies
-       run : npm install
+      - name : install dependancies
+        run : npm install
 
-     - name : build project
-       run : npm run build
+      - name : build project
+        run : npm run build
 
-     - name : test project
-       run : npm test
+      - name : test project
+        run : npm test
   
 
-   deploy-project:
-    runs-on : ubuntu-latest
+    deploy-project:
+     runs-on : ubuntu-latest
 
-    needs : build_test
+     needs : build_test
      
-    steps :
+     steps :
       
       - name : depoly the project
         run: curl -X POST ${{ secrets.RENDER_FRONTEND_HOOK }}
